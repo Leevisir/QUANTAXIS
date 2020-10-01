@@ -2419,7 +2419,8 @@ def QA_fetch_get_future_min(code, start, end, frequence='1min', ip=None,
     global extension_market_list
     extension_market_list = QA_fetch_get_extensionmarket_list(
     ) if extension_market_list is None else extension_market_list
-
+    
+    # chinese market opens for 4 hours a day, 4 * # of mins, don't know 2.5 yet
     if str(frequence) in ['5', '5m', '5min', 'five']:
         frequence, type_ = 0, '5min'
         lens = 48 * lens * 2.5
